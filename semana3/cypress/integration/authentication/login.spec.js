@@ -3,13 +3,13 @@
 describe('Login Tests', () => {
   // Hooks
   beforeEach(() => {
+    // Intercept the request to the API
     cy.intercept('POST', '/login').as('login');
     cy.visit('/signin');
   });
 
   context('Positive Scenarios', () => {
-    it.only('should log in', () => {
-      Cypress.env('PAPITAS');
+    it('should log in', () => {
       cy.get('#username').type(Cypress.env('margarettaUser'));
       cy.get('#password').type(Cypress.env('margarettaPassword'));
       cy.get('[data-test="signin-submit"]').click();
