@@ -5,7 +5,7 @@ import { loginPage } from '../../page-objects/login-page';
 describe('Login Tests', () => {
   context('Login through API', () => {
     beforeEach(() => {
-      cy.apiLogin(Cypress.env('username'), Cypress.env('password'));
+      cy.apiLogin(Cypress.env('margarettaUser'), Cypress.env('margarettaPassword'));
     });
 
     it('should navigate to bank accounts', () => {
