@@ -28,6 +28,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 Cypress.on('test:after:run', (test, runnable) => {
   if (test.state === 'failed') {
+    // debugger;
     const parentName = getParentName(runnable);
     const screenshot = `${Cypress.config('screenshotsFolder')}/${Cypress.spec.name}/${parentName} -- ${
       test.title
